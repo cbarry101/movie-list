@@ -25,6 +25,7 @@ document.querySelector('form').addEventListener('submit', addMovie)
 const deleteMovie  = (event) => {
     event.target.parentNode.remove()
     message.textContent = 'Movie Deleted!'
+    revealMessage()
 }
 
 const crossOffMovie = (event) => {
@@ -34,6 +35,11 @@ const crossOffMovie = (event) => {
     }else{
         message.textContent = 'Movie Added Back!'
     }
+    revealMessage()
     }
-
-
+const revealMessage = () => {
+    message.classList.remove('hide')
+    setTimeout(() => {
+        message.classList.add('hide')
+    },1000) 
+}
